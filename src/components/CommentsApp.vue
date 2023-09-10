@@ -4,7 +4,8 @@
     <hr />
     <FormTodo v-on:add-todo="addComment"></FormTodo>
     <div class="list-group">
-      <div class="list-group-item" v-for="(comment, index) in allComments" v-bind:key="comment.id">
+      <p v-if="comments.length <= 0"> No comments </p>
+      <div v-else class="list-group-item" v-for="(comment, index) in allComments" v-bind:key="index">
         <span class="comment__author">
           Author: <strong>{{ comment.name }}</strong></span
         >
