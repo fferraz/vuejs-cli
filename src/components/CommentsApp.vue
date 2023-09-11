@@ -4,8 +4,13 @@
     <hr />
     <FormTodo v-on:add-todo="addComment"></FormTodo>
     <div class="list-group">
-      <p v-if="comments.length <= 0"> No comments </p>
-      <div v-else class="list-group-item" v-for="(comment, index) in allComments" v-bind:key="index">
+      <p v-if="comments.length <= 0">No comments</p>
+      <div
+        v-else
+        class="list-group-item"
+        v-for="(comment, index) in allComments"
+        v-bind:key="index"
+      >
         <span class="comment__author">
           Author: <strong>{{ comment.name }}</strong></span
         >
@@ -22,10 +27,10 @@
 </template>
 
 <script>
-import FormTodo from './FormTodo.vue'
+import FormTodo from "./FormTodo.vue";
 export default {
-  components:{
-    FormTodo
+  components: {
+    FormTodo,
   },
   data() {
     return {
@@ -36,10 +41,9 @@ export default {
     removeComment(index) {
       this.comments.splice(index, 1);
     },
-    addComment(comment){
+    addComment(comment) {
       this.comments.push(comment);
-
-    }
+    },
   },
   computed: {
     allComments() {
